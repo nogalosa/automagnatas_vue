@@ -3,58 +3,58 @@
     <div class="search--block">
       <div class="make--select">
         <router-link to="/model-select" class="make">
-          <img src="../assets/img/car-makes/Alfa_Romeo_logo.png"><span>Alfa Romeo</span>
+          <img src="../assets/img/car-makes/alfa-romeo.png"><span>Alfa Romeo</span>
         </router-link>
         <router-link to="/model-select" class="make">
-          <img src="../assets/img/car-makes/Alfa_Romeo_logo.png"><span>Alfa Romeo</span>
+          <img src="../assets/img/car-makes/bmw.png"><span>BMW</span>
         </router-link>
         <router-link to="/model-select" class="make">
-          <img src="../assets/img/car-makes/Alfa_Romeo_logo.png"><span>Alfa Romeo</span>
+          <img src="../assets/img/car-makes/chrysler.png"><span>Chrysler</span>
         </router-link>
         <router-link to="/model-select" class="make">
-          <img src="../assets/img/car-makes/Alfa_Romeo_logo.png"><span>Alfa Romeo</span>
+          <img src="../assets/img/car-makes/dodge.png"><span>Dodge</span>
         </router-link>
         <router-link to="/model-select" class="make">
-          <img src="../assets/img/car-makes/Alfa_Romeo_logo.png"><span>Alfa Romeo</span>
+          <img src="../assets/img/car-makes/fiat.png"><span>Fiat</span>
         </router-link>
         <router-link to="/model-select" class="make">
-          <img src="../assets/img/car-makes/Alfa_Romeo_logo.png"><span>Alfa Romeo</span>
+          <img src="../assets/img/car-makes/ford.png"><span>Ford</span>
         </router-link>
         <router-link to="/model-select" class="make">
-          <img src="../assets/img/car-makes/Alfa_Romeo_logo.png"><span>Alfa Romeo</span>
+          <img src="../assets/img/car-makes/honda.png"><span>Honda</span>
         </router-link>
         <router-link to="/model-select" class="make">
-          <img src="../assets/img/car-makes/Alfa_Romeo_logo.png"><span>Alfa Romeo</span>
+          <img src="../assets/img/car-makes/hyundai.png"><span>Hyundai</span>
         </router-link>
         <router-link to="/model-select" class="make">
-          <img src="../assets/img/car-makes/Alfa_Romeo_logo.png"><span>Alfa Romeo</span>
+          <img src="../assets/img/car-makes/mazda.png"><span>Mazda</span>
         </router-link>
         <router-link to="/model-select" class="make">
-          <img src="../assets/img/car-makes/Alfa_Romeo_logo.png"><span>Alfa Romeo</span>
+          <img src="../assets/img/car-makes/nissan.png"><span>Nissan</span>
         </router-link>
         <router-link to="/model-select" class="make">
-          <img src="../assets/img/car-makes/Alfa_Romeo_logo.png"><span>Alfa Romeo</span>
+          <img src="../assets/img/car-makes/opel.png"><span>Opel</span>
         </router-link>
         <router-link to="/model-select" class="make">
-          <img src="../assets/img/car-makes/Alfa_Romeo_logo.png"><span>Alfa Romeo</span>
+          <img src="../assets/img/car-makes/peugeot.png"><span>Peugeot</span>
         </router-link>
         <router-link to="/model-select" class="make">
-          <img src="../assets/img/car-makes/Alfa_Romeo_logo.png"><span>Alfa Romeo</span>
+          <img src="../assets/img/car-makes/renault.png"><span>Renault</span>
         </router-link>
         <router-link to="/model-select" class="make">
-          <img src="../assets/img/car-makes/Alfa_Romeo_logo.png"><span>Alfa Romeo</span>
+          <img src="../assets/img/car-makes/seat.png"><span>Seat</span>
         </router-link>
         <router-link to="/model-select" class="make">
-          <img src="../assets/img/car-makes/Alfa_Romeo_logo.png"><span>Alfa Romeo</span>
+          <img src="../assets/img/car-makes/skoda.png"><span>Škoda</span>
         </router-link>
         <router-link to="/model-select" class="make">
-          <img src="../assets/img/car-makes/Alfa_Romeo_logo.png"><span>Alfa Romeo</span>
+          <img src="../assets/img/car-makes/suzuki.png"><span>Suzuki</span>
         </router-link>
         <router-link to="/model-select" class="make">
-          <img src="../assets/img/car-makes/Alfa_Romeo_logo.png"><span>Alfa Romeo</span>
+          <img src="../assets/img/car-makes/toyota.png"><span>Toyota</span>
         </router-link>
         <router-link to="/model-select" class="make">
-          <img src="../assets/img/car-makes/Alfa_Romeo_logo.png"><span>Alfa Romeo</span>
+          <img src="../assets/img/car-makes/volkswagen.png"><span>Volkswagen</span>
         </router-link>
 
         <div class="selection">
@@ -131,7 +131,7 @@
           </select>
         </div>
         <div class="fast--search--button--wrapper">
-          <button class="search">IEŠKOTI</button>
+          <router-link to="/search-results" class="search">IEŠKOTI</router-link>
         </div>
       </div>
     </div>
@@ -284,6 +284,7 @@ select {
       cursor: pointer;
       transition: .3s background-color;
       font-size: 14px;
+      display: inline-block;
 
       &:hover {
         background-color: #fa6a63;

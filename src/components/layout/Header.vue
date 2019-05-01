@@ -19,7 +19,7 @@
             <div class="misc">
                 <a href="#">LT</a>
                 <router-link to="/contacts"><img src="../../assets/img/icons/map-pin.svg"></router-link>
-                <a href="#"><img src="../../assets/img/icons/avatar.svg"></a>
+                <router-link to="/login"><img src="../../assets/img/icons/avatar.svg"></router-link>
                 <a href="#" v-on:click="cartToggle"><img src="../../assets/img/icons/cart.svg"></a>
                 <div class="cart" v-bind:class="{active: showCart}">
                     <table>
@@ -36,7 +36,7 @@
                             <td class="right">€ 210.00</td>
                         </tr>
                     </table>
-                    <router-link class="cart--button" to="/">Tęsti</router-link>
+                    <router-link class="cart--button" to="/cart">Tęsti</router-link>
                 </div>
             </div>
 

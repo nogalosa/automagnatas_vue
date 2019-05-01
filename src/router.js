@@ -35,6 +35,51 @@ export default new Router({
 
 
 
+    { // Profile links
+      path: '/login',
+      name: 'login',
+      component: () => import('./views/user/Login.vue')
+    },
+    {
+      path: '/register',
+      name: 'register',
+      component: () => import('./views/user/Register.vue')
+    },
+    {
+      path: '/cart',
+      name: 'cart',
+      component: () => import('./views/user/Cart.vue')
+    },
+    {
+      path: '/checkout',
+      name: 'checkout',
+      component: () => import('./views/user/Checkout.vue')
+    },
+    {
+      path: '/checkout-success',
+      name: 'checkout-success',
+      component: () => import('./views/user/CheckoutSuccess.vue')
+    },
+    {
+      path: '/profile',
+      name: 'profile',
+      component: () => import('./views/user/Profile.vue')
+    },
+    {
+      path: '/edit-profile',
+      name: 'edit-profile',
+      component: () => import('./views/user/EditProfile.vue')
+    },
+    {
+      path: '/edit-password',
+      name: 'edit-password',
+      component: () => import('./views/user/EditPassword.vue')
+    },
+    
+
+
+
+
     { // Misc links
       path: '/shipping-terms',
       name: 'shipping-terms',

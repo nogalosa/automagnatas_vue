@@ -23,7 +23,7 @@
                 <br><br><br>
 
                 <div class="right">
-                    <router-link class="buy" to="/item-details">🛒 Pirkti</router-link>
+                    <router-link class="buy" to="/cart">🛒 Pirkti</router-link>
                     <router-link class="add--wishlist" to="/item-details">💖 Noriu</router-link><br>
                     <small>Įkėlimo data: 2019-04-01</small>
                 </div>
