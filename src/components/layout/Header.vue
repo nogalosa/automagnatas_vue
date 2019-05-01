@@ -1,21 +1,48 @@
 <template>
     <header>
         <div class="inner--header container">
-            <div class="nav">
-                <div class="button"><span></span><span></span><span></span></div>
+            <div class="nav" v-bind:class="{active: showNav}">
+                <div class="button" v-on:click="navToggle"><span></span><span></span><span></span></div>
             </div>
-            <div class="logo">AUTOMAGNATAS</div>
+            <div class="navigation" v-bind:class="{active: showNav}">
+                <ul>
+                    <li><router-link to="/contacts">Kontaktai</router-link></li>
+                    <li><router-link to="/faq">D.U.K</router-link></li>
+                    <li><router-link to="/shipping-terms">Pristatymo taisyklės</router-link></li>
+                    <li><router-link to="/return-terms">Grąžinimo taisyklės</router-link></li>
+                    <li><router-link to="/support">Klientų aptarnavimas</router-link></li>
+                </ul>
+            </div>
+
+            <div class="logo"><router-link to="/">AUTOMAGNATAS</router-link></div>
 
             <div class="misc">
                 <a href="#">LT</a>
-                <a href="#"><img src="../../assets/img/icons/map-pin.svg"></a>
+                <router-link to="/contacts"><img src="../../assets/img/icons/map-pin.svg"></router-link>
                 <a href="#"><img src="../../assets/img/icons/avatar.svg"></a>
-                <a href="#"><img src="../../assets/img/icons/cart.svg"></a>
+                <a href="#" v-on:click="cartToggle"><img src="../../assets/img/icons/cart.svg"></a>
+                <div class="cart" v-bind:class="{active: showCart}">
+                    <table>
+                        <tr>
+                            <td><img src="../../assets/img/item-photo-placeholder.jpg"></td>
+                            <td>Variklis<br><b>€ 105.00</b></td>
+                        </tr>
+                        <tr>
+                            <td><img src="../../assets/img/item-photo-placeholder.jpg"></td>
+                            <td>Variklis<br><b>€ 105.00</b></td>
+                        </tr>
+                        <tr>
+                            <td>IŠ VISO</td>
+                            <td class="right">€ 210.00</td>
+                        </tr>
+                    </table>
+                    <router-link class="cart--button" to="/">Tęsti</router-link>
+                </div>
             </div>
 
             <div class="search">
                 <input type="text" name="search" placeholder="Įveskite detalės pavadinimą...">
-                <button type="submit"><img src="../../assets/img/icons/search.svg"></button>
+                <router-link to="/search-results"><img src="../../assets/img/icons/search.svg"></router-link>
             </div>
 
             <div class="info">
@@ -27,11 +54,25 @@
 
 <script>
 export default {
-    name: "Header"
+    name: "Header",
+    data: function(){
+        return {
+            showCart: false,
+            showNav: false,
+        }
+    },
+    methods: {
+        cartToggle: function(){
+            this.showCart = !this.showCart;
+        },
+        navToggle: function() {
+            this.showNav = !this.showNav;
+        }
+    }
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 header {
     min-height: 390px;
     width: 100%;
@@ -47,6 +88,140 @@ header {
 
 .nav {
     float: left;
+
+    &.active {
+        position: fixed;
+        z-index: 10;
+        left: 305px;
+        top: 5px;
+
+        background-color: rgba(0,0,0,.5);
+        padding: 20px;
+        padding-right: 12px;
+        padding-bottom: 14px;
+        border-radius: 40px;
+
+        span:first-child {
+            transform: rotate(45deg);
+        }
+        span:nth-child(2){
+            opacity: 0;
+        }
+        span:last-child {
+            transform: rotate(-45deg);
+        }
+    }
+}
+
+.navigation {
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: #f4f5fa;
+    color: #000;
+    height: 100vh;
+    width: 300px;
+    z-index: 10;
+    margin-left: -300px;
+    transition: .3s margin-left;
+
+    &.active {
+        margin-left:0px;
+    }
+
+    ul {
+        list-style: none;
+
+        li {
+            padding: 10px 30px;
+            border-bottom: 1px solid #ccc;
+
+            &:first-child {
+                border-top: 1px solid #ccc;
+                margin-top: 20px;
+            }
+
+            a {
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+
+.cart {
+    background-color: #6771e2;
+    padding: 20px;
+    z-index: 10;
+    position: absolute;
+    width: 100%;
+    display: none;
+
+    &.active {
+        display: block;
+    }
+
+    table {
+        width: 100%;
+        border-spacing: 0;
+        font-size: 12px;
+
+        td {
+            border-bottom: 1px solid #848de8;
+            &:first-child {
+                width: 60px;
+                height: 80px;
+                padding: 10px 0;
+            }
+            &:last-child {
+                padding-left: 10px;
+            }
+
+            &.right {
+                text-align: right;
+            }
+        }
+        tr {
+            &:last-child {
+                td {
+                    border: none;
+                    padding: 10px 0;
+                    height: auto;
+                }
+            }
+        }
+        img {
+            max-width: 60px;
+            max-height: 60px;
+        }
+    }
+
+
+    .cart--button {
+        background-color: #5f68d1;
+        max-width: 200px;
+        width: 100%;
+        border: none;
+        padding: 10px 25px;
+        text-transform: uppercase;
+        color: #fff;
+        font-family: 'Montserrat', sans-serif;
+        cursor: pointer;
+        -webkit-transition: .3s background-color;
+        transition: .3s background-color;
+        font-size: 14px;
+        font-weight: normal;
+        text-align: center;
+        margin: auto;
+        margin-top: 5px;
+        display: block;
+        border-radius: 20px;
+
+        &:hover {
+            background-color: #515abe;
+        }
+    }
 }
 
 .logo {
@@ -69,6 +244,9 @@ header {
     height: 5px;
     margin-bottom: 7px;
     border-radius: 2px;
+    opacity: 1;
+    transition: .3s transform, .3s opacity;
+    transform-origin: 0 50%;
 }
 
 .misc {
@@ -111,7 +289,7 @@ header {
     display: inline-block;
 }
 
-.search button {
+.search a {
     background: transparent;
     border: none;
     outline: none;
@@ -121,7 +299,7 @@ header {
     transition: .3s transform;
 }
 
-.search button:hover {
+.search a:hover {
     transform: scale(1.1) rotate(10deg);
 }
 

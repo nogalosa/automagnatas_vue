@@ -12,12 +12,53 @@ export default new Router({
       component: Home
     },
     {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
-    }
+      path: '/model-select',
+      name: 'model-select',
+      component: () => import('./views/ModelSelect.vue')
+    },
+    {
+      path: '/group-select',
+      name: 'group-select',
+      component: () => import('./views/GroupSelect.vue')
+    },
+    {
+      path: '/search-results',
+      name: 'search-results',
+      component: () => import('./views/SearchResults.vue')
+    },
+    {
+      path: '/item-details',
+      name: 'item-details',
+      component: () => import('./views/ItemDetails.vue')
+    },
+
+
+
+
+    { // Misc links
+      path: '/shipping-terms',
+      name: 'shipping-terms',
+      component: () => import('./views/misc/Shipping.vue')
+    },
+    {
+      path: '/return-terms',
+      name: 'return-terms',
+      component: () => import('./views/misc/Returns.vue')
+    },
+    {
+      path: '/support',
+      name: 'support',
+      component: () => import('./views/misc/Support.vue')
+    },
+    {
+      path: '/faq',
+      name: 'faq',
+      component: () => import('./views/misc/Faq.vue')
+    },
+    {
+      path: '/contacts',
+      name: 'contacts',
+      component: () => import('./views/misc/Contacts.vue')
+    },
   ]
 })

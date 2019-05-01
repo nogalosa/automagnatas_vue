@@ -4,16 +4,16 @@
             <div class="col">
                 <ul>
                     <li class="title">Klientai</li>
-                    <li><a href="#">Pristatymo taisyklės</a></li>
-                    <li><a href="#">Grąžinimo taisyklės</a></li>
-                    <li><a href="#">Klientų aptarnavimas</a></li>
+                    <li><router-link to="/shipping-terms">Pristatymo taisyklės</router-link></li>
+                    <li><router-link to="/return-terms">Grąžinimo taisyklės</router-link></li>
+                    <li><router-link to="/support">Klientų aptarnavimas</router-link></li>
                 </ul>
             </div>
             <div class="col">
                 <ul>
                     <li class="title">Klausimai</li>
-                    <li><a href="#">D.U.K</a></li>
-                    <li><a href="#">Kontaktai</a></li>
+                    <li><router-link to="/faq">D.U.K</router-link></li>
+                    <li><router-link to="/contacts">Kontaktai</router-link></li>
                 </ul>
             </div>
             <div class="copyright">2019 &copy; Automagnatas, UAB</div>
@@ -44,6 +44,9 @@ export default {
     li {
         margin: 0;
         padding-bottom: 2px;
+    }
+    a:hover {
+        text-decoration: underline;
     }
     .title {
         font-weight: bold;
